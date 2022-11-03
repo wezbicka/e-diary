@@ -17,3 +17,8 @@ print(students)
 child = Schoolkid.objects.filter(full_name__contains="Фролов Иван")[0]
 print(child.full_name) 
 
+# шаг 6
+from datacenter.models import Mark     
+marks = Mark.objects.filter(schoolkid=child) 
+print(marks)
+

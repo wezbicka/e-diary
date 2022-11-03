@@ -15,6 +15,8 @@ print(students)
 # i = Ivan.filter(full_name__contains="Иван")
 # child = Ivan.filter(full_name__contains="Иван")[0]
 child = Schoolkid.objects.filter(full_name__contains="Фролов Иван")[0]
+#child_1 = Schoolkid.objects.get(full_name__contains="Фролов Иван")  
+# лучший вариантдля этого шага
 print(child.full_name) 
 
 # шаг 6

@@ -52,3 +52,13 @@ mark.save()
 print(mark) #5 Фролов Иван Григорьевич
 Mark.objects.filter(schoolkid=child, points__lte=3).count() # 262
 
+
+# шаг 10
+def fix_marks(schoolkid):
+    bad_marks = Mark.objects.filter(schoolkid=child, points__lte=3)
+    for mark in bad_marks:
+        mark.points = 5
+        mark.save()
+   # mark.update()
+
+

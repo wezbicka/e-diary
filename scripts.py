@@ -69,4 +69,8 @@ print(сhastisements)
 # шаг 13
 сhastisements.delete()
 
+# шаг 14
 
+def remove_chastisements(schoolkid):
+    сhastisements = Chastisement.objects.filter(schoolkid=schoolkid) 
+    сhastisements.delete()

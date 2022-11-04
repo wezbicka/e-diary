@@ -61,4 +61,9 @@ def fix_marks(schoolkid):
         mark.save()
    # mark.update()
 
+# шаг 12
+
+сhastisements = Chastisement.objects.filter(schoolkid=child) 
+print(сhastisements)
+
 

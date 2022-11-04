@@ -1,5 +1,6 @@
 from datacenter.models import Schoolkid
-
+from datacenter.models import Mark 
+from datacenter.models import Chastisement  
 # шаг 4
 
 students = Schoolkid.objects.all()
@@ -42,5 +43,12 @@ print(bad_marks)
 <Mark: 3 Фролов Иван Григорьевич>, <Mark: 3 Фролов Иван Григорьевич>, 
 '...(remaining elements truncated)...']>
 """
-
+# шаг 8
+Mark.objects.filter(schoolkid=child, points__lte=3).count() # 263
+mark = Mark.objects.filter(schoolkid=child, points__lte=3)[0]
+print(mark) # 2 Фролов Иван Григорьевич
+mark.points = 5
+mark.save()
+print(mark) #5 Фролов Иван Григорьевич
+Mark.objects.filter(schoolkid=child, points__lte=3).count() # 262
 

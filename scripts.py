@@ -74,3 +74,21 @@ print(сhastisements)
 def remove_chastisements(schoolkid):
     сhastisements = Chastisement.objects.filter(schoolkid=schoolkid) 
     сhastisements.delete()
+
+# шаг 15
+
+from datacenter.models import Lesson        
+lesson = Lesson.objects.all()
+print(lesson) 
+"""<QuerySet [<Lesson: Изобразительное искусство 1А>, 
+<Lesson: Чтение 1А>, <Lesson: 
+Труд 1А>, <Lesson: Чтение 1А>, <Lesson: Математика 1А>, 
+<Lesson: Математика 1А>, 
+<Lesson: Чистописание 1А>, <Lesson: Математика 1А>, 
+<Lesson: Музыка 1А>, <Lesson: Русский язык 1А>, <Lesson: Русский язык 1А>,
+ <Lesson: Природоведение 1А>, <Lesson: Физкультура 1А>, <Lesson: Труд 1А>, 
+ <Lesson: Чистописание 1А>, <Lesson: Музыка 1А>, 
+ <Lesson: Изобразительное искусство 1А>, <Lesson: Природоведение 1А>, 
+ <Lesson: Физкультура 1А>, <Lesson: Физкультура 1А>, '...(remaining elements truncated)...']> """
+
+ 

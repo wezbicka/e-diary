@@ -113,3 +113,25 @@ print(child_lesson)
 <Lesson: Физкультура 6А>, 
 <Lesson: История 6А>, 
 <Lesson: География 6А>, '...(remaining elements truncated)...']>"""
+
+# шаг 17
+
+child_math_lessons = Lesson.objects.filter(year_of_study=6, group_letter="А", subject__title="Математика")
+print(child_math_lessons)
+"""<QuerySet [<Lesson: Математика 6А>, 
+<Lesson: Математика 6А>,
+ <Lesson: Математика 6А>,
+  <Lesson: Математика 6А>,
+   <Lesson: Математика 6А>, <Lesson
+   : Математика 6А>,
+    <Lesson: Математика 6А>,
+     <Lesson: Математика 6А>,
+      <Lesson: Математика 6А>,
+       <Lesson: Математика 6А>, <Lesson: Математика 6А>,
+        <Lesson: Математика 6А>, <Lesson: Математика 6А>, <Lesson: Математика 6А>,
+         <Lesson: Математика 6А>, <Lesson: Математика 6А>, 
+<Lesson: Математика 6А>,
+ <Lesson: Математика 6А>, <Lesson: Математика 6А>,
+  <Lesson: Математика 6А>, '...(remaining elements truncated)...']> """
+
+  

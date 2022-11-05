@@ -153,7 +153,8 @@ Commendation.objects.create(
 import random
 
 
-def create_commendation(schoolkid, subject):
+def create_commendation(child_name, subject):
+    schoolkid = get_kid_by_name(child_name)
     child_lesson = Lesson.objects.filter(
         year_of_study=schoolkid.year_of_study, 
         group_letter=schoolkid.group_letter,
@@ -199,3 +200,17 @@ def create_commendation(schoolkid, subject):
         subject=child_lesson.subject,
         teacher=child_lesson.teacher
     )
+
+# шаг 20
+
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+
+
+def get_kid_by_name(child_name: str) -> Schoolkid:
+    try:
+        child = Schoolkid.objects.get(full_name__contains=child_name)
+    except MultipleObjectsReturned:
+        print("Найдено больше одного ученика")
+    except ObjectDoesNotExist:
+        print("Не найдено учеников с таким именем")
+    return child

@@ -134,4 +134,17 @@ print(child_math_lessons)
  <Lesson: Математика 6А>, <Lesson: Математика 6А>,
   <Lesson: Математика 6А>, '...(remaining elements truncated)...']> """
 
-  
+  # шаг 18
+
+from datacenter.models import Commendation
+lesson = child_math_lessons[0]
+date = lesson.date
+subject = lesson.subject
+teacher = lesson.teacher
+Commendation.objects.create(
+    text="Хвалю",
+    created=date,
+    schoolkid=child,
+    subject=subject,
+    teacher=teacher
+)

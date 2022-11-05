@@ -77,9 +77,9 @@ def remove_chastisements(schoolkid):
 
 # шаг 15
 
-from datacenter.models import Lesson        
+from datacenter.models import Lesson 
 lesson = Lesson.objects.all()
-print(lesson) 
+print(lesson)
 """<QuerySet [<Lesson: Изобразительное искусство 1А>, 
 <Lesson: Чтение 1А>, <Lesson: 
 Труд 1А>, <Lesson: Чтение 1А>, <Lesson: Математика 1А>, 
@@ -91,4 +91,25 @@ print(lesson)
  <Lesson: Изобразительное искусство 1А>, <Lesson: Природоведение 1А>, 
  <Lesson: Физкультура 1А>, <Lesson: Физкультура 1А>, '...(remaining elements truncated)...']> """
 
- 
+ # шаг 16
+
+child_lesson = Lesson.objects.filter(year_of_study=6, group_letter="А")
+print(child_lesson)
+"""<QuerySet [<Lesson: Математика 6А>, 
+<Lesson: Технология 6А>, 
+<Lesson: Основы безопасности жизнедеятельности (ОБЖ) 6А>, 
+<Lesson: Русский язык 6А>, <Lesson: История 6А>, 
+<Lesson: Математика 6А>, <Lesson: Русский язык 6А>, 
+<Lesson: Музыка 6А>, 
+<Lesson: Физкультура 6А>, 
+<Lesson: Обществознание 6А>, 
+<Lesson: Краеведение 6А>, 
+<Lesson: Технология 6А>, 
+<Lesson: Изобразительное искусство 6А>, 
+<Lesson: Краеведение 6А>, 
+<Lesson: География 6А>, 
+<Lesson: Литература 6А>, 
+<Lesson: Иностранный язык 6А>, 
+<Lesson: Физкультура 6А>, 
+<Lesson: История 6А>, 
+<Lesson: География 6А>, '...(remaining elements truncated)...']>"""
